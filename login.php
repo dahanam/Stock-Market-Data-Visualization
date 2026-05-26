@@ -29,13 +29,13 @@ if ($row = $result->fetch_assoc()) {
 
     $_SESSION["uid"] = $row["uid"];
     $_SESSION["login"] = $row["login"];
-    $_SESSION["username"] = $row["login"];   // ✅ ADD THIS
+    $_SESSION["username"] = $row["login"]; 
     $_SESSION["name"] = $row["name"];
     $_SESSION["logged_in"] = true;
 
     echo json_encode([
         "status" => "success",
-        "username" => $row["login"]           // ✅ ADD THIS
+        "username" => $row["login"] 
     ]);
 } else {
     echo json_encode([
