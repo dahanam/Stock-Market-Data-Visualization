@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background:#111; color:#fff; display:flex; justify-content:center; align-items:center; height:100vh;">
+
+    <div style="background:#1c2229; padding:30px; border-radius:8px; width:300px;">
+        <h2 style="text-align:center;">Login</h2>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Username"
+            style="width:100%; margin-bottom:10px;"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            style="width:100%; margin-bottom:10px;"
+        >
+
+        <button
+            onclick="login()"
+            style="width:100%; padding:10px;"
+        >
+            Login
+        </button>
+
+        <p id="loginMsg" style="color:yellow; margin-top:10px;"></p>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            fetch("login.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body:
+                    "username=" + encodeURIComponent(username) +
+                    "&password=" + encodeURIComponent(password)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === "success") {
+                    // ✅ STEP 3 — redirect after login
+                    window.location.href = "index.php";
+                } else {
+                    document.getElementById("loginMsg").textContent = data.message;
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

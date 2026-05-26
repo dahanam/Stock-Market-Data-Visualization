@@ -1,0 +1,281 @@
+/* =========================================================
+   GLOBAL THEME 
+========================================================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    /* Light neutral background */
+    color: #222;
+    /* Dark readable text */
+    body {
+    overflow-x: hidden;
+}
+}
+
+header {
+    background: #0d1117;
+    padding: 25px;
+    border-bottom: 1px solid #222;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #f0b429;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* =========================================================
+   GRID LAYOUT
+========================================================= */
+#container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    height: calc(100vh - 80px);
+}
+
+/* =========================================================
+   SIDEBAR — DARK MODE
+========================================================= */
+#sidebar {
+    background: #161b22;
+    padding: 25px;
+    border-right: 1px solid #222;
+    overflow-y: auto;
+    color: #e2e2e2;
+}
+
+#sidebar h2 {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #72b7ff;
+}
+
+/* Sidebar inputs */
+#sidebar select,
+#sidebar input[type="range"] {
+    width: 100%;
+    margin: 10px 0 20px 0;
+    background: #0d1117;
+    color: #e2e2e2;
+    border: 1px solid #333;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+#btnLoadData {
+    width: 100%;
+    padding: 10px;
+    background: #238636;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#btnLoadData:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+label {
+    color: #cfcfcf;
+}
+
+/* =========================================================
+   MAIN CONTENT — WHITE PANELS FOR CHARTS
+========================================================= */
+#main {
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* PANEL — this is the white box holding each chart/table */
+.panel {
+    margin-bottom: 35px;
+    background: #ffffff;
+    /* WHITE PANEL */
+    padding: 20px;
+    border: 1px solid #ccc;
+    /* Light border */
+    border-radius: 6px;
+    color: #222;
+}
+
+.panel h2 {
+    margin-top: 0;
+    color: #004fa3;
+    /* Accent blue */
+    font-size: 22px;
+}
+
+/* =========================================================
+   CHART BOX — PURE WHITE
+========================================================= */
+.chart-box {
+    width: 100%;
+    height: 350px;
+    background: #ffffff;
+    /* WHITE CHART CONTAINER */
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+/* In case old class name used */
+.chart {
+    width: 100%;
+    height: 350px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+/* =========================================================
+   TABLE BOX — WHITE
+========================================================= */
+.table-box {
+    width: 100%;
+    height: 300px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+/* Google Table container */
+#table_div {
+    background: #ffffff !important;
+    border: 1px solid #ccc;
+    color: #222;
+}
+
+/* Remove forced opacity */
+#table_div,
+#table_div * {
+    opacity: 1 !important;
+}
+
+#table_div table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff !important;
+    color: #222;
+}
+
+/* Table header styling */
+#table_div .google-visualization-table-tr-head td {
+    background: #eeeeee;
+    color: #004fa3;
+    font-weight: bold;
+}
+
+/* Highlight for outlier rows */
+#table_div tr td[style*="background-color: yellow"] {
+    background-color: #fff7a6 !important;
+    color: #222 !important;
+}
+
+/* =========================================================
+   SLIDERS & INFO TEXT
+========================================================= */
+.slider-group {
+    margin-bottom: 20px;
+}
+
+.info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* ============================
+   TABS (Improved Bloomberg-style)
+============================ */
+.table-tabs {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 8px;
+}
+
+.tab-btn {
+    background: #f0f0f0;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #004fa3;
+    transition: 0.15s ease;
+}
+
+.tab-btn:hover {
+    background: #e6e6e6;
+}
+
+.tab-btn.active {
+    background: #004fa3;
+    color: white;
+    border-color: #003f87;
+}
+
+/* ============================
+   TABLE STYLE IMPROVEMENTS
+============================ */
+#monthly_table table,
+#daily_table table {
+    font-size: 14px;
+    color: #222 !important;
+}
+
+#monthly_table table tr:nth-child(even),
+#daily_table table tr:nth-child(even) {
+    background: #fafafa !important;
+}
+
+#monthly_table table tr:nth-child(odd),
+#daily_table table tr:nth-child(odd) {
+    background: #ffffff !important;
+}
+
+#monthly_table table tr:hover,
+#daily_table table tr:hover {
+    background: #dce6ff !important;
+}
+
+/* make header bold and modern */
+.google-visualization-table-tr-head td {
+    background: #e9eef7 !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #003f87 !important;
+}
+
+/* number alignment */
+td {
+    text-align: left !important;
+}
+
+td:nth-child(3),
+td:nth-child(4) {
+    text-align: right !important;
+    /* numbers right-aligned */
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 12px;
+    background: #e9eefb;
+    color: #1f4fb2;
+    font-weight: 600;
+}
+
